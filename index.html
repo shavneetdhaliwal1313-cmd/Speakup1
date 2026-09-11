@@ -1,132 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SpeakUp — Communication Coach</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SpeakUp — Communication Coach</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <div class="brand"><span class="brand-mark">S</span><span>SpeakUp</span></div>
-      <p class="eyebrow">COMMUNICATION COACH</p>
-      <nav>
-        <button class="nav-item active" data-view="dashboard">⌂ <span>Dashboard</span></button>
-        <button class="nav-item" data-view="speaking">◉ <span>Speaking Practice</span></button>
-        <button class="nav-item" data-view="workplace">▣ <span>Workplace</span></button>
-        <button class="nav-item" data-view="writing">✎ <span>Email Practice</span></button>
-        <button class="nav-item" data-view="progress">↗ <span>My Progress</span></button>
-      </nav>
-      <div class="sidebar-bottom">
-        <div class="streak-card">
-          <div class="streak-icon">🔥</div>
-          <div><strong id="streak">7 day streak</strong><small>Keep practicing!</small></div>
-        </div>
-        <button class="profile"><span class="avatar">SK</span><span><b>My Practice</b><small>Personal goals</small></span><span>⋯</span></button>
-      </div>
-    </aside>
+<div class="app">
+<aside>
+  <div class="brand"><span>S</span> SpeakUp</div><div class="eyebrow">COMMUNICATION COACH</div>
+  <nav>
+    <button class="nav active" data-page="home">⌂ <span>Home</span></button>
+    <button class="nav" data-page="speaking">🎙 <span>Speaking</span></button>
+    <button class="nav" data-page="workplace">💼 <span>Workplace</span></button>
+    <button class="nav" data-page="writing">✍ <span>Writing</span></button>
+    <button class="nav" data-page="vocabulary">📚 <span>Vocabulary</span></button>
+    <button class="nav" data-page="challenge">🔥 <span>Daily Challenge</span></button>
+    <button class="nav" data-page="progress">↗ <span>Progress</span></button>
+  </nav>
+  <div class="sidebottom"><div class="streak">🔥 <div><b>7 day streak</b><small>Keep it going!</small></div></div><div class="profile"><span>SK</span><div><b>My Practice</b><small>Personal goals</small></div></div></div>
+</aside>
+<main>
+<header><div class="mobilebrand"><span>S</span> SpeakUp</div><div>Thursday, September 10 &nbsp; 🔔</div></header>
 
-    <main>
-      <header class="topbar">
-        <div class="mobile-brand"><span class="brand-mark">S</span> SpeakUp</div>
-        <div class="top-actions"><span class="date">Thursday, September 10</span><button class="icon-btn" aria-label="notifications">🔔</button></div>
-      </header>
+<section id="home" class="page active">
+<div class="hero"><div><span class="badge">✦ YOUR DAILY PRACTICE</span><h1>Communicate with<br><strong>confidence.</strong></h1><p>Practice the English you actually need at work — one small conversation at a time.</p><button class="cta" onclick="go('challenge')">Start today's practice →</button><div class="micro">🔥 7 day streak &nbsp; • &nbsp; 10 min today</div></div><div class="score"><b>72</b><small>COMMUNICATION<br>SCORE</small></div></div>
+<div class="sectiontop"><div><span class="label">TODAY</span><h2>Your communication workout</h2></div><small>3 activities · ~10 min</small></div>
+<div class="cards three">
+<button class="card" onclick="go('speaking')"><div class="icon purple">🎙</div><small>01 · SPEAKING</small><h3>Sound confident</h3><p>Answer a realistic workplace question and improve your response.</p><b>Practice now →</b></button>
+<button class="card" onclick="go('workplace')"><div class="icon blue">💼</div><small>02 · WORKPLACE</small><h3>Handle a situation</h3><p>Practice conversations with supervisors and coworkers.</p><b>Try a scenario →</b></button>
+<button class="card" onclick="go('writing')"><div class="icon green">✍</div><small>03 · WRITING</small><h3>Write professionally</h3><p>Turn everyday messages into clear workplace English.</p><b>Start writing →</b></button>
+</div>
+<div class="bottomgrid"><div class="panel"><div class="panelhead"><div><span class="label">SKILL SNAPSHOT</span><h3>Your progress</h3></div><button onclick="go('progress')">View all →</button></div><div class="skill">Clarity <b>72%</b><div><i style="width:72%"></i></div></div><div class="skill">Professional tone <b>78%</b><div><i style="width:78%"></i></div></div><div class="skill">Confidence <b>64%</b><div><i style="width:64%"></i></div></div></div><div class="tip">💡<span>COACH TIP</span><h3>Simple English sounds confident.</h3><p>Focus on your main point instead of searching for complicated words.</p></div></div>
+</section>
 
-      <section id="dashboard" class="view active-view">
-        <div class="hero">
-          <div>
-            <span class="pill">✦ YOUR DAILY PRACTICE</span>
-            <h1>Communicate with<br><em>confidence.</em></h1>
-            <p>Build stronger workplace English through short, realistic practice every day.</p>
-            <button class="primary" onclick="showView('speaking')">Start today's practice <span>→</span></button>
-          </div>
-          <div class="hero-orb">
-            <div class="orb-inner"><span>10</span><small>MIN</small></div>
-            <div class="orbit-dot one"></div><div class="orbit-dot two"></div>
-          </div>
-        </div>
+<section id="speaking" class="page">
+<div class="title"><span class="label">🎙 SPEAKING PRACTICE</span><h1>Say it with confidence.</h1><p>Answer naturally, then get coaching on clarity, tone and confidence.</p></div>
+<div class="twocol"><div class="panel"><div class="exercisehead">WORKPLACE · BEGINNER <b>1 / 5</b></div><h2>Your supervisor asks:</h2><div class="question">“Can you give me a quick update on this file?”</div><div class="chips"><span>What you've done</span><span>Current status</span><span>Next step</span></div><textarea id="speech" placeholder="Type what you would say..."></textarea><button class="ghost" onclick="exampleSpeech()">Show example</button> <button class="cta" onclick="coachSpeech()">Get feedback →</button><div id="speechFeedback" class="feedback"></div></div><div class="panel"><span class="label">THE 3-PART FORMULA</span><h3>Make your answer easy to follow.</h3><div class="formula">① What I did → ② Where it stands → ③ What's next</div><div class="model"><small>STRONG EXAMPLE</small><p>“The file is progressing well. I contacted the adjuster yesterday and I'm waiting for the medical records. I'll follow up by Friday if I don't hear back.”</p></div></div></div>
+</section>
 
-        <div class="section-heading"><div><span class="section-label">TODAY</span><h2>Your communication workout</h2></div><span class="muted">3 activities · ~10 min</span></div>
-        <div class="workout-grid">
-          <button class="workout-card" onclick="showView('speaking')"><span class="card-icon purple">🎤</span><span class="card-num">01</span><h3>Speak clearly</h3><p>Answer a realistic workplace question in your own words.</p><span class="card-link">Practice speaking →</span></button>
-          <button class="workout-card" onclick="showView('workplace')"><span class="card-icon blue">💼</span><span class="card-num">02</span><h3>Workplace scenario</h3><p>Learn how to handle a conversation with your supervisor.</p><span class="card-link">Try scenario →</span></button>
-          <button class="workout-card" onclick="showView('writing')"><span class="card-icon green">✍️</span><span class="card-num">03</span><h3>Write professionally</h3><p>Turn a quick message into clear, polished workplace English.</p><span class="card-link">Write an email →</span></button>
-        </div>
+<section id="workplace" class="page"><div class="title"><span class="label">💼 WORKPLACE</span><h1>Practice real conversations.</h1><p>Choose a situation you'll actually face at work.</p></div><div class="cards three">
+<button class="scenario" onclick="openScenario('Ask for clarification','You received instructions but one part is unclear. Ask your supervisor a professional question.')">💡<h3>Ask for clarification</h3><p>When you don't understand an instruction.</p><b>Practice →</b></button>
+<button class="scenario" onclick="openScenario('Give a progress update','Your manager asks where a task stands. Give a concise update without over-explaining.')">📊<h3>Give a progress update</h3><p>Sound concise and confident.</p><b>Practice →</b></button>
+<button class="scenario" onclick="openScenario('Push back professionally','You have several urgent tasks. Explain the situation and ask which should come first.')">🤝<h3>Push back professionally</h3><p>Set priorities without sounding difficult.</p><b>Practice →</b></button>
+<button class="scenario" onclick="openScenario('Make small talk','A coworker asks how your weekend was. Keep the conversation going naturally.')">☕<h3>Make small talk</h3><p>Build rapport with coworkers.</p><b>Practice →</b></button>
+<button class="scenario" onclick="openScenario('Disagree respectfully','You think there is a better approach. Share your view without sounding confrontational.')">💬<h3>Disagree respectfully</h3><p>Express a different opinion.</p><b>Practice →</b></button>
+<button class="scenario" onclick="openScenario('Ask for feedback','You want to improve at work. Ask your supervisor for useful feedback.')">🌱<h3>Ask for feedback</h3><p>Turn feedback into career growth.</p><b>Practice →</b></button>
+</div></section>
 
-        <div class="dashboard-bottom">
-          <div class="panel">
-            <div class="panel-head"><div><span class="section-label">SKILL SNAPSHOT</span><h3>Your progress</h3></div><button onclick="showView('progress')">View all →</button></div>
-            <div class="skill"><div><span>Clarity</span><b>72%</b></div><div class="bar"><i style="width:72%"></i></div></div>
-            <div class="skill"><div><span>Professional tone</span><b>78%</b></div><div class="bar"><i style="width:78%"></i></div></div>
-            <div class="skill"><div><span>Confidence</span><b>64%</b></div><div class="bar"><i style="width:64%"></i></div></div>
-          </div>
-          <div class="quote-card"><span>“</span><p>Good communication isn't about using complicated words. It's about making your message easy to understand.</p><small>— Today's reminder</small></div>
-        </div>
-      </section>
+<section id="writing" class="page"><div class="title"><span class="label">✍ WRITING</span><h1>Write like a professional.</h1><p>Practice emails and messages that sound natural, polite and confident.</p></div><div class="twocol"><div class="panel"><span class="label">TODAY'S EMAIL</span><h2>Follow up on a request</h2><p class="muted">Your colleague hasn't responded to a request you sent two days ago. Write a polite follow-up.</p><textarea id="email" placeholder="Good afternoon,..."></textarea><button class="cta" onclick="coachEmail()">Improve my email →</button><div id="emailFeedback" class="feedback"></div></div><div class="panel"><span class="label">MODEL RESPONSE</span><div class="email"><b>Good afternoon,</b><p>I'm following up on my email below regarding the requested documents. When you have a chance, could you please provide an update?</p><p>Please let me know if you need anything further from my end.</p><p>Thank you,<br>Shavneet</p></div></div></div></section>
 
-      <section id="speaking" class="view">
-        <div class="page-title"><span class="section-label">SPEAKING PRACTICE</span><h1>Say it with confidence.</h1><p>Imagine you're at work. Answer naturally, then compare your response with a stronger version.</p></div>
-        <div class="practice-layout">
-          <div class="scenario panel">
-            <div class="scenario-top"><span class="difficulty">Beginner · 2 min</span><span>Scenario 01</span></div>
-            <h2>Your supervisor asks:</h2>
-            <blockquote>“Can you give me a quick update on this file?”</blockquote>
-            <p class="hint">Try to include: <b>what you've done</b> + <b>what you're waiting for</b> + <b>your next step</b>.</p>
-            <textarea id="speakingAnswer" placeholder="Type what you would say..."></textarea>
-            <div class="practice-actions"><button class="secondary" onclick="fillExample()">Show example</button><button class="primary" onclick="evaluateSpeaking()">Get feedback →</button></div>
-            <div id="speakingFeedback" class="feedback hidden"></div>
-          </div>
-          <div class="coach panel">
-            <span class="section-label">COACH TIP</span><h3>Use a simple structure</h3>
-            <div class="formula"><span>1</span> What I did <b>→</b> <span>2</span> Where it stands <b>→</b> <span>3</span> What's next</div>
-            <div class="coach-example"><small>EXAMPLE</small><p>“The file is progressing well. I contacted the adjuster yesterday and I'm waiting for the medical records. I'll follow up by Friday if I don't hear back.”</p></div>
-          </div>
-        </div>
-      </section>
+<section id="vocabulary" class="page"><div class="title"><span class="label">📚 VOCABULARY</span><h1>Learn useful phrases.</h1><p>Build practical workplace English you can use immediately.</p></div><div class="phrasegrid">
+<div class="phrase"><small>INSTEAD OF</small><del>“I don't know.”</del><small>TRY</small><strong>“Let me check and confirm.”</strong><button onclick="speak('Let me check and confirm.')">🔊 Listen</button></div>
+<div class="phrase"><small>INSTEAD OF</small><del>“What do you mean?”</del><small>TRY</small><strong>“Could you please clarify what you mean by that?”</strong><button onclick="speak('Could you please clarify what you mean by that?')">🔊 Listen</button></div>
+<div class="phrase"><small>INSTEAD OF</small><del>“I will do it.”</del><small>TRY</small><strong>“I'll take care of it and keep you updated.”</strong><button onclick="speak('I will take care of it and keep you updated.')">🔊 Listen</button></div>
+<div class="phrase"><small>INSTEAD OF</small><del>“I disagree.”</del><small>TRY</small><strong>“I see your point. Another option could be…”</strong><button onclick="speak('I see your point. Another option could be')">🔊 Listen</button></div>
+</div></section>
 
-      <section id="workplace" class="view">
-        <div class="page-title"><span class="section-label">WORKPLACE SCENARIOS</span><h1>Practice real conversations.</h1><p>Pick a situation and build a response that sounds natural, clear, and professional.</p></div>
-        <div class="scenario-grid">
-          <button class="scenario-tile" onclick="openScenario('Asking for clarification','You received instructions but one part is unclear. Ask your supervisor a professional question.')"><span>💡</span><b>Ask for clarification</b><small>When you don't understand an instruction</small></button>
-          <button class="scenario-tile" onclick="openScenario('Give a progress update','Your manager asks where a task stands. Give a concise update without over-explaining.')"><span>📊</span><b>Give a progress update</b><small>Sound concise and confident</small></button>
-          <button class="scenario-tile" onclick="openScenario('Push back professionally','You have too many urgent tasks. Explain the situation and ask which task should come first.')"><span>🤝</span><b>Push back professionally</b><small>Set priorities without sounding difficult</small></button>
-          <button class="scenario-tile" onclick="openScenario('Make small talk','A coworker asks how your weekend was. Keep the conversation going naturally.')"><span>☕</span><b>Make small talk</b><small>Build rapport with coworkers</small></button>
-          <button class="scenario-tile" onclick="openScenario('Disagree respectfully','You think there is a better approach. Share your view without sounding confrontational.')"><span>💬</span><b>Disagree respectfully</b><small>Express a different opinion</small></button>
-          <button class="scenario-tile" onclick="openScenario('Ask for feedback','You want to improve at work. Ask your supervisor for useful feedback.')"><span>🌱</span><b>Ask for feedback</b><small>Turn feedback into career growth</small></button>
-        </div>
-        <div id="scenarioModal" class="modal hidden"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><span class="section-label">YOUR SCENARIO</span><h2 id="modalTitle"></h2><p id="modalText"></p><textarea placeholder="What would you say?"></textarea><button class="primary" onclick="closeModal()">Save practice ✓</button></div></div>
-      </section>
+<section id="challenge" class="page"><div class="title"><span class="label">🔥 DAILY CHALLENGE</span><h1>10 minutes. One skill.</h1><p>Complete today's workout and keep your streak alive.</p></div><div class="challenge"><div class="challengehead"><span>DAY 8</span><b>7 / 8 days</b></div><h2>Today's focus: <strong>Sound more confident</strong></h2><button onclick="go('speaking')">🎙 <div><b>Speak</b><small>Answer one workplace question · 3 min</small></div>→</button><button onclick="go('workplace')">💼 <div><b>Respond</b><small>Handle one workplace scenario · 4 min</small></div>→</button><button onclick="go('writing')">✍ <div><b>Write</b><small>Polish one professional message · 3 min</small></div>→</button></div></section>
 
-      <section id="writing" class="view">
-        <div class="page-title"><span class="section-label">EMAIL PRACTICE</span><h1>Write like a professional.</h1><p>Take a quick workplace message and turn it into clear, polished communication.</p></div>
-        <div class="writing-layout">
-          <div class="panel">
-            <span class="section-label">SITUATION</span><h3>Follow up on a request</h3><p>Your colleague hasn't responded to a request you sent two days ago. Write a polite follow-up.</p>
-            <div class="mini-note"><b>Goal:</b> Be polite, direct, and make the next action clear.</div>
-            <textarea id="emailAnswer" placeholder="Write your email here..."></textarea>
-            <button class="primary" onclick="evaluateEmail()">Improve my email →</button>
-            <div id="emailFeedback" class="feedback hidden"></div>
-          </div>
-          <div class="panel model"><span class="section-label">MODEL RESPONSE</span><h3>Clear + professional</h3><div class="email-preview"><b>Good afternoon,</b><p>I’m following up on my email below regarding the requested documents. When you have a chance, could you please provide an update?</p><p>Please let me know if you need anything further from my end.</p><p>Thank you,<br>Shavneet</p></div></div>
-        </div>
-      </section>
-
-      <section id="progress" class="view">
-        <div class="page-title"><span class="section-label">MY PROGRESS</span><h1>You're getting stronger.</h1><p>Small improvements compound. Keep showing up.</p></div>
-        <div class="stats"><div class="stat"><span>🔥</span><b>7</b><small>day streak</small></div><div class="stat"><span>✓</span><b id="sessions">18</b><small>sessions completed</small></div><div class="stat"><span>⏱</span><b>3.2h</b><small>practice time</small></div><div class="stat"><span>↗</span><b>+16%</b><small>overall growth</small></div></div>
-        <div class="progress-panel panel"><div class="panel-head"><div><span class="section-label">SKILLS</span><h3>Communication score</h3></div></div>
-          <div class="big-skill"><div><span>Clarity</span><b>72</b></div><div class="bar large"><i style="width:72%"></i></div><small>You're getting better at keeping your message focused.</small></div>
-          <div class="big-skill"><div><span>Professional tone</span><b>78</b></div><div class="bar large"><i style="width:78%"></i></div><small>Your writing sounds polite and workplace-appropriate.</small></div>
-          <div class="big-skill"><div><span>Confidence</span><b>64</b></div><div class="bar large"><i style="width:64%"></i></div><small>Next goal: answer without overthinking.</small></div>
-          <div class="big-skill"><div><span>Vocabulary</span><b>69</b></div><div class="bar large"><i style="width:69%"></i></div><small>Build practical phrases instead of memorizing difficult words.</small></div>
-        </div>
-      </section>
-    </main>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+<section id="progress" class="page"><div class="title"><span class="label">↗ MY PROGRESS</span><h1>You're getting stronger.</h1><p>Small improvements compound. Keep showing up.</p></div><div class="stats"><div>🔥<b>7</b><small>day streak</small></div><div>✓<b id="sessions">18</b><small>sessions completed</small></div><div>⏱<b>3.2h</b><small>practice time</small></div><div>↗<b>+16%</b><small>overall growth</small></div></div><div class="panel progress"><span class="label">SKILLS</span><h3>Communication score</h3><div class="bigskill">Clarity <b>72</b><div><i style="width:72%"></i></div><small>Keep your main point focused.</small></div><div class="bigskill">Professional tone <b>78</b><div><i style="width:78%"></i></div><small>Your writing sounds workplace-appropriate.</small></div><div class="bigskill">Confidence <b>64</b><div><i style="width:64%"></i></div><small>Next goal: answer without overthinking.</small></div><div class="bigskill">Vocabulary <b>69</b><div><i style="width:69%"></i></div><small>Build phrases you can actually use.</small></div></div></section>
+</main></div>
+<div id="modal" class="modal"><div class="modalbox"><button onclick="closeModal()">×</button><span class="label">WORKPLACE PRACTICE</span><h2 id="modalTitle"></h2><p id="modalText"></p><textarea placeholder="What would you say?"></textarea><button class="cta" onclick="closeModal()">Save practice ✓</button></div></div>
+<script src="script.js"></script>
+</body></html>
